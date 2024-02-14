@@ -26,7 +26,7 @@ def get_the_cheapest_big_mac_price_by_year(year):
     country_code = min_price_row['iso_a3']
     min_price = min_price_row['dollar_price']
 
-    return f"{country_name}({country_code}): ${min_price:.1f}"
+    return f"{country_name}({country_code}): ${round(min_price, 2)}"
 
 def get_the_most_expensive_big_mac_price_by_year(year):
     query = f"(year == {year})"
@@ -37,7 +37,7 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     country_code = max_price_row['iso_a3']
     max_price = max_price_row['dollar_price']
 
-    return f"{country_name}({country_code}): ${max_price:.1f}"
+    return f"{country_name}({country_code}): ${round(max_price, 2)}"
 
 if __name__ == "__main__":
     result_a = get_big_mac_price_by_year(2010,"arg")
