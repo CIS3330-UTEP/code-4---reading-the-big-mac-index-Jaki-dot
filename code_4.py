@@ -4,6 +4,8 @@ big_mac_file = './big-mac-full-index.csv'
 
 df = pd.read_csv(big_mac_file)
 df['year'] = pd.DatetimeIndex(df['date']).year
+    # Stack Overflow. (2024/02/21). “df['year'] = pd.DatetimeIndex(df['date']).year” Referenced using 
+    # Stack Overflow. https://stackoverflow.com/questions/54110673/pandas-extracting-month-and-year-from-index
 
 def get_big_mac_price_by_year(year,country_code):
     query = f"(iso_a3.str.lower() == '{country_code}') and (year == {year})"
